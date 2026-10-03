@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Miqdad Fairruz Haq - Format ATS Umum</title>
+  <style>
+    /* Reset & Base Setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a202c;
+      background-color: #f7fafc;
+      line-height: 1.45;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Action Bar (Preview Only) */
+    .top-bar {
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .top-bar h1 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .top-bar .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: #334155;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+    }
+
+    /* A4 Paper Sheet */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 18mm 20mm;
+      margin: 24px auto;
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      border-bottom: 1.5px solid #1e293b;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #334155;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .header .contact-info {
+      font-size: 12px;
+      color: #475569;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+    }
+    .header .contact-info a {
+      color: #1e293b;
+      text-decoration: none;
+    }
+    .header .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 14px;
+    }
+    h2.section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* Items */
+    .entry {
+      margin-bottom: 9px;
+    }
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .entry-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .entry-subtitle {
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      font-style: italic;
+    }
+    .entry-date {
+      font-size: 11.5px;
+      color: #64748b;
+      font-weight: 500;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .entry-location {
+      font-size: 11.5px;
+      color: #64748b;
+    }
+
+    /* Bullet List */
+    ul.bullet-list {
+      list-style-type: disc;
+      margin-left: 17px;
+      margin-top: 3px;
+    }
+    ul.bullet-list li {
+      font-size: 12px;
+      color: #334155;
+      margin-bottom: 2.5px;
+      text-align: justify;
+    }
+    ul.bullet-list li strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Skills Table / Grid */
+    .skills-block {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .skills-row {
+      display: table-row;
+    }
+    .skills-label {
+      display: table-cell;
+      font-weight: 700;
+      color: #0f172a;
+      width: 140px;
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+    .skills-value {
+      display: table-cell;
+      color: #334155;
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .top-bar {
+        display: none !important;
+      }
+      .page {
+        margin: 0;
+        padding: 14mm 16mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for Browser Preview -->
+  <div class="top-bar">
+    <h1>Format 1: CV ATS-Friendly Umum (Standar Korporat & ATS Internasional)</h1>
+    <div class="btn-group">
+      <a href="/cv-tech-specialist.html" class="btn btn-secondary">Lihat Format 2 (Teknis) ➔</a>
+      <button class="btn" onclick="window.print()">🖨️ Cetak / Simpan PDF (A4)</button>
+    </div>
+  </div>
+
+  <!-- A4 Page Content -->
+  <div class="page">
+    
+    <!-- Header -->
+    <header class="header">
+      <h1>MIQDAD FAIRRUZ HAQ</h1>
+      <div class="subtitle">Junior Web Developer &amp; UI/UX Specialist</div>
+      <div class="contact-info">
+        <span>Tangerang Selatan, Banten</span>
+        <span>•</span>
+        <span><a href="mailto:miqdadfairruzhaq@gmail.com">miqdadfairruzhaq@gmail.com</a></span>
+        <span>•</span>
+        <span><a href="https://linkedin.com/in/miqdad-fh-63ba3b372" target="_blank">linkedin.com/in/miqdad-fh-63ba3b372</a></span>
+        <span>•</span>
+        <span><a href="https://github.com/FHRRZZZ" target="_blank">github.com/FHRRZZZ</a></span>
+      </div>
+    </header>
+
+    <!-- Ringkasan Profesional -->
+    <section>
+      <h2 class="section-title">Ringkasan Profesional</h2>
+      <p style="font-size: 12px; color: #334155; text-align: justify;">
+        Mahasiswa Teknik Informatika Universitas Pamulang (Semester 5) dengan fokus pada pengembangan aplikasi web modern (React, Laravel, Tailwind CSS) dan perancangan antarmuka pengguna (UI/UX) berbasis sistem desain terukur di Figma. Memiliki rekam jejak dalam merancang dan mengimplementasikan aplikasi fungsional multi-role, platform mobile cerdas, serta portal edukasi. Berpengalaman dalam kepemimpinan tim dan organisasi mahasiswa, berorientasi pada efisiensi sistem, struktur kode bersih, dan kenyamanan interaksi pengguna.
+      </p>
+    </section>
+
+    <!-- Pendidikan -->
+    <section>
+      <h2 class="section-title">Pendidikan</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Universitas Pamulang (UNPAM)</span>
+            <span class="entry-subtitle"> — S1 Teknik Informatika</span>
+          </div>
+          <span class="entry-date">2022 – Sekarang (Semester 5)</span>
+        </div>
+        <div class="entry-location" style="margin-bottom: 3px;">Tangerang Selatan, Indonesia</div>
+        <ul class="bullet-list">
+          <li>Fokus Studi: Rekayasa Perangkat Lunak, Pemrograman Web, Pemodelan Basis Data Relasional, Desain Interaksi UI/UX, dan Struktur Data.</li>
+          <li>Aktif mengimplementasikan studi kasus perkuliahan ke dalam proyek web aplikatif berskala riil.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Proyek Teknologi & Rekayasa Perangkat Lunak -->
+    <section>
+      <h2 class="section-title">Proyek Rekayasa Perangkat Lunak</h2>
+
+      <!-- RentGo -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">RentGo — Marketplace Rental Mobil Multi-Role Terpadu</span>
+            <span class="entry-subtitle"> | React, Vite, Tailwind CSS, REST API</span>
+          </div>
+          <span class="entry-date">2024</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Merancang arsitektur frontend web interaktif berbasis komponen reusable untuk 3 hak akses pengguna (Penyewa, Pemilik Armada, dan Administrator).</li>
+          <li>Mengembangkan alur reservasi kendaraan end-to-end: pencarian dan filter armada dinamis, kalkulator estimasi biaya sewa harian/mingguan, serta validasi form verifikasi penyewa.</li>
+          <li>Mengintegrasikan manajemen state client yang responsif guna memastikan transisi halaman instan dan performa optimal di berbagai resolusi layar.</li>
+        </ul>
+      </div>
+
+      <!-- Website Kelas Tentech -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Website Kelas Tentech — Portal Informasi &amp; Direktori Mahasiswa</span>
+            <span class="entry-subtitle"> | React, Firebase Hosting, CSS3</span>
+          </div>
+          <span class="entry-date">2024</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Membangun dan meng-hosting platform pusat informasi perkuliahan yang aktif diakses publik (Live: <em>tentech-addc4.web.app</em>).</li>
+          <li>Menyediakan modul jadwal perkuliahan terintegrasi, repositori materi belajar bersama, serta direktori profil mahasiswa dengan antarmuka modern dan responsif mobile.</li>
+        </ul>
+      </div>
+
+      <!-- Nexus AI -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Nexus AI — Aplikasi Asisten Percakapan Cerdas Multi-Model</span>
+            <span class="entry-subtitle"> | Flutter, Dart, RESTful AI API</span>
+          </div>
+          <span class="entry-date">2024</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Mengembangkan aplikasi mobile berbasis Flutter dengan integrasi API model kecerdasan buatan untuk asisten tanya jawab kontekstual dan produktivitas harian.</li>
+          <li>Mengimplementasikan penanganan error jaringan asinkron, manajemen sesi chat lokal, dan rendering antarmuka chat yang adaptif.</li>
+        </ul>
+      </div>
+
+      <!-- BelajarOnline & Toko Madura -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">BelajarOnline — Platform Manajemen Kursus &amp; Materi E-Learning</span>
+            <span class="entry-subtitle"> | Laravel, PHP, MySQL, Blade</span>
+          </div>
+          <span class="entry-date">2023 – 2024</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Membangun backend CRUD terstruktur menggunakan framework MVC Laravel untuk modul kurikulum belajar, submission tugas mahasiswa, dan sistem penilaian.</li>
+          <li>Merancang skema relasi basis data MySQL yang dinormalisasi untuk menjaga integritas data pengguna, materi kursus, dan riwayat kuis.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pengalaman Organisasi & Kepemimpinan -->
+    <section>
+      <h2 class="section-title">Pengalaman Organisasi &amp; Kepemimpinan</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Informatics Study Club (ISC) UNPAM</span>
+            <span class="entry-subtitle"> — Anggota Organisasi Mahasiswa</span>
+          </div>
+          <span class="entry-date">Semester 2</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Berpartisipasi aktif dalam kegiatan kajian teknologi informasi, workshop pemecahan masalah algoritma, dan kolaborasi pembelajaran pemrograman web.</li>
+          <li>Menerima sertifikat resmi keanggotaan atas kontribusi dan penyelesaian program akademik organisasi.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Ekstrakurikuler Broadcasting &amp; Multimedia SMA</span>
+            <span class="entry-subtitle"> — Ketua Ekstrakurikuler &amp; Koordinator Dokumentasi</span>
+          </div>
+          <span class="entry-date">2020 – 2021</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Memimpin operasional divisi dokumentasi dan siaran dengan mengoordinasikan 15+ anggota dalam peliputan agenda resmi sekolah.</li>
+          <li>Mengelola alur kerja pra-produksi hingga pasca-produksi media visual dan menjaga standar kualitas publikasi visual institusi.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Kompetisi & Prestasi -->
+    <section>
+      <h2 class="section-title">Kompetisi &amp; Prestasi</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Peserta Resmi Creative Web Competition — Bytesfest</span>
+            <span class="entry-subtitle"> | Tingkat Nasional / Mahasiswa</span>
+          </div>
+          <span class="entry-date">2023</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Merancang konsep solusi web kreatif dengan penekanan pada prinsip User Interface (UI), User Experience (UX), dan responsivitas desain dalam batasan waktu kompetisi.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Keterampilan Teknis & Alat -->
+    <section>
+      <h2 class="section-title">Keterampilan Teknis</h2>
+      <div class="skills-block">
+        <div class="skills-row">
+          <div class="skills-label">Frontend &amp; UI:</div>
+          <div class="skills-value">React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap, Vite</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-label">Backend &amp; Basis Data:</div>
+          <div class="skills-value">Laravel (PHP), Node.js (Dasar), RESTful APIs, MySQL Database Design</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-label">Mobile &amp; Desain:</div>
+          <div class="skills-value">Flutter &amp; Dart (Dasar), Figma (Wireframing, UI Prototyping, Component Systems)</div>
+        </div>
+        <div class="skills-row">
+          <div class="skills-label">Tools &amp; Workflow:</div>
+          <div class="skills-value">Git, GitHub, VS Code, Firebase Hosting, Postman, Vercel/Netlify Deployment</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

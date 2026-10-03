@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Miqdad Fairruz Haq - Web Developer & UI/UX Specialist</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background-color: #f1f5f9;
+      line-height: 1.45;
+      font-size: 12.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Action Bar (Preview Only) */
+    .top-bar {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .top-bar h1 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .top-bar .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: #334155;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+    }
+
+    /* A4 Paper Sheet */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 66mm 1fr;
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      background: #f8fafc;
+      border-right: 1px solid #e2e8f0;
+      padding: 18mm 12mm 18mm 14mm;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Right Main Content */
+    .main {
+      padding: 18mm 16mm 18mm 14mm;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Headers & Typography */
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+    .brand-role {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-top: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar .section-label {
+      border-bottom-color: #cbd5e1;
+    }
+
+    /* Sidebar Blocks */
+    .sidebar-block {
+      font-size: 11.5px;
+    }
+    .contact-item {
+      margin-bottom: 6px;
+      word-break: break-all;
+    }
+    .contact-item .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 1px;
+    }
+    .contact-item a {
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-item a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* Skill Badges & Stacks */
+    .skill-group {
+      margin-bottom: 10px;
+    }
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+    .skill-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tag {
+      font-size: 10.5px;
+      padding: 2px 7px;
+      background: #e2e8f0;
+      color: #1e293b;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .tag-accent {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      font-weight: 600;
+    }
+
+    /* Main Content Blocks */
+    .summary-text {
+      font-size: 12px;
+      color: #334155;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    .project-card {
+      margin-bottom: 11px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .project-card:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .project-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .project-stack {
+      font-size: 11px;
+      font-weight: 600;
+      color: #2563eb;
+      font-family: monospace;
+    }
+    .project-link {
+      font-size: 10.5px;
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 6px;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+    .project-desc {
+      font-size: 11.5px;
+      color: #475569;
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+
+    ul.project-points {
+      list-style-type: disc;
+      margin-left: 15px;
+    }
+    ul.project-points li {
+      font-size: 11.5px;
+      color: #334155;
+      margin-bottom: 2px;
+      text-align: justify;
+    }
+    ul.project-points li strong {
+      color: #0f172a;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .top-bar {
+        display: none !important;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for Browser Preview -->
+  <div class="top-bar">
+    <h1>Format 2: CV Sesuai Bidang (Web Developer &amp; UI/UX - Modern Minimalist)</h1>
+    <div class="btn-group">
+      <a href="/cv-ats-umum.html" class="btn btn-secondary">Lihat Format 1 (ATS Umum) ➔</a>
+      <button class="btn" onclick="window.print()">🖨️ Cetak / Simpan PDF (A4)</button>
+    </div>
+  </div>
+
+  <!-- A4 Page Content (Two-Column Layout) -->
+  <div class="page">
+    
+    <!-- Left Sidebar: Contact, Tech Stacks, Education, Certs -->
+    <aside class="sidebar">
+      <div>
+        <h1 class="brand-title">MIQDAD FAIRRUZ HAQ</h1>
+        <div class="brand-role">Web Developer &amp; UI/UX</div>
+      </div>
+
+      <!-- Kontak & Profil -->
+      <div class="sidebar-block">
+        <div class="section-label">Kontak &amp; Portofolio</div>
+        
+        <div class="contact-item">
+          <div class="label">Domisili</div>
+          <div>Tangerang Selatan, Banten</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Email Langsung</div>
+          <div><a href="mailto:miqdadfairruzhaq@gmail.com">miqdadfairruzhaq@gmail.com</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">GitHub Repos</div>
+          <div><a href="https://github.com/FHRRZZZ" target="_blank">github.com/FHRRZZZ</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">LinkedIn</div>
+          <div><a href="https://linkedin.com/in/miqdad-fh-63ba3b372" target="_blank">in/miqdad-fh-63ba3b372</a></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Live Web Kelas</div>
+          <div><a href="https://tentech-addc4.web.app" target="_blank">tentech-addc4.web.app</a></div>
+        </div>
+      </div>
+
+      <!-- Core Technical Skills -->
+      <div class="sidebar-block">
+        <div class="section-label">Keahlian Teknis</div>
+
+        <div class="skill-group">
+          <div class="skill-title">Frontend &amp; UI Stack</div>
+          <div class="tag-container">
+            <span class="tag tag-accent">React.js</span>
+            <span class="tag tag-accent">JavaScript ES6+</span>
+            <span class="tag tag-accent">Tailwind CSS</span>
+            <span class="tag">HTML5 / Modern CSS</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Responsive Web</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">Backend &amp; Database</div>
+          <div class="tag-container">
+            <span class="tag tag-accent">Laravel (PHP)</span>
+            <span class="tag tag-accent">MySQL Relational</span>
+            <span class="tag">RESTful API Design</span>
+            <span class="tag">Node.js (Express)</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">UI/UX &amp; Prototyping</div>
+          <div class="tag-container">
+            <span class="tag tag-accent">Figma</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">Component Library</span>
+            <span class="tag">Interactive Prototype</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">Tools &amp; Ekosistem</div>
+          <div class="tag-container">
+            <span class="tag">Git &amp; GitHub</span>
+            <span class="tag">Firebase Hosting</span>
+            <span class="tag">Flutter (Basics)</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pendidikan -->
+      <div class="sidebar-block">
+        <div class="section-label">Pendidikan</div>
+        <div style="font-size: 11.5px; font-weight: 700; color: #0f172a;">
+          S1 Teknik Informatika
+        </div>
+        <div style="font-size: 11px; color: #334155;">Universitas Pamulang</div>
+        <div style="font-size: 10.5px; color: #64748b; margin-top: 2px;">2022 – Sekarang (Semester 5)</div>
+      </div>
+
+      <!-- Sertifikasi & Prestasi -->
+      <div class="sidebar-block">
+        <div class="section-label">Sertifikat Resmi</div>
+        <div style="margin-bottom: 6px;">
+          <div style="font-weight: 600; color: #0f172a; font-size: 11px;">Bytesfest Web Competition</div>
+          <div style="font-size: 10.5px; color: #64748b;">Sertifikat Peserta Resmi • 2023</div>
+        </div>
+        <div>
+          <div style="font-weight: 600; color: #0f172a; font-size: 11px;">Informatics Study Club (ISC)</div>
+          <div style="font-size: 10.5px; color: #64748b;">Sertifikat Keanggotaan UNPAM</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Right Main Area: Summary, Detailed Project Architectures, Leadership -->
+    <main class="main">
+      
+      <!-- Profil & Value Proposition -->
+      <section>
+        <div class="section-label">Profil Profesional</div>
+        <p class="summary-text">
+          Junior Web Developer &amp; UI/UX Designer dengan spesialisasi ekosistem <strong>React, Tailwind CSS, dan Laravel</strong>. Berpengalaman membangun aplikasi web fungsional dari tahap wireframing &amp; prototyping di <strong>Figma</strong> hingga implementasi kode modular, integrasi REST API, dan deployment live. Mengutamakan performa aplikasi yang ringan, penataan arsitektur kode yang terstruktur, serta pengalaman pengguna yang intuitif.
+        </p>
+      </section>
+
+      <!-- Portofolio Proyek Unggulan -->
+      <section>
+        <div class="section-label">Proyek Rekayasa Web &amp; Aplikasi Unggulan</div>
+
+        <!-- RentGo -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-title">RentGo</span>
+              <a href="https://github.com/FHRRZZZ/RentGo" target="_blank" class="project-link">[Repo GitHub ↗]</a>
+            </div>
+            <span class="project-stack">React • Tailwind • REST API</span>
+          </div>
+          <div class="project-desc">Marketplace rental mobil multi-role (Penyewa, Pemilik Mobil, Administrator)</div>
+          <ul class="project-points">
+            <li>Membangun frontend modular dengan filter armada multi-kriteria, kalkulasi biaya sewa otomatis, dan alur reservasi interaktif.</li>
+            <li>Mengembangkan antarmuka dashboard manajemen kendaraan untuk mitra rental dan validasi verifikasi identitas penyewa.</li>
+          </ul>
+        </div>
+
+        <!-- Website Kelas -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-title">Website Kelas Tentech</span>
+              <a href="https://tentech-addc4.web.app" target="_blank" class="project-link">[Live Demo ↗]</a>
+            </div>
+            <span class="project-stack">React • Firebase Hosting • CSS3</span>
+          </div>
+          <div class="project-desc">Portal resmi informasi akademik dan komunitas kelas berbasis web live</div>
+          <ul class="project-points">
+            <li>Menerapkan arsitektur single-page application untuk menampilkan jadwal perkuliahan dinamis, arsip tugas, dan direktori mahasiswa.</li>
+            <li>Mengonfigurasi deployment pipeline menggunakan Firebase Hosting dengan waktu muat halaman cepat dan responsif di perangkat seluler.</li>
+          </ul>
+        </div>
+
+        <!-- Nexus AI -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-title">Nexus AI Mobile App</span>
+              <a href="https://github.com/FHRRZZZ/Nexus-AI" target="_blank" class="project-link">[Repo GitHub ↗]</a>
+            </div>
+            <span class="project-stack">Flutter • Dart • AI API</span>
+          </div>
+          <div class="project-desc">Aplikasi asisten produktivitas cerdas multi-model berbasis mobile</div>
+          <ul class="project-points">
+            <li>Mengintegrasikan REST API model AI untuk dialog interaktif dan asisten penulisan kode/konten.</li>
+            <li>Mengelola siklus state komunikasi asinkron serta penyimpanan riwayat sesi chat lokal pengguna.</li>
+          </ul>
+        </div>
+
+        <!-- BelajarOnline -->
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-title">BelajarOnline E-Learning</span>
+              <a href="https://github.com/Fhrrzz114/BelajarOnline" target="_blank" class="project-link">[Repo GitHub ↗]</a>
+            </div>
+            <span class="project-stack">Laravel • PHP • MySQL • Blade</span>
+          </div>
+          <div class="project-desc">Platform edukasi berbasis web untuk kursus mandiri dan manajemen tugas</div>
+          <ul class="project-points">
+            <li>Merancang skema relasi basis data MySQL (Users, Courses, Lessons, Submissions) dengan integritas data terjamin.</li>
+            <li>Mengimplementasikan sistem otentikasi peran (Siswa &amp; Pengajar) serta modul pengumpulan materi dan kuis.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Pengalaman Kepemimpinan & Organisasi -->
+      <section>
+        <div class="section-label">Pengalaman Kepemimpinan &amp; Organisasi</div>
+
+        <div style="margin-bottom: 8px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #0f172a;">
+            <span>Informatics Study Club (ISC) — Universitas Pamulang</span>
+            <span style="font-size: 11px; font-weight: 500; color: #64748b;">Semester 2</span>
+          </div>
+          <p style="font-size: 11.5px; color: #475569; margin-top: 2px;">
+            Aktif dalam forum riset mahasiswa terkait fundamental logika pemrograman, pengenalan arsitektur web modern, dan kolaborasi pengerjaan modul latihan teknis bersama.
+          </p>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #0f172a;">
+            <span>Ketua Ekstrakurikuler Broadcasting &amp; Dokumentasi</span>
+            <span style="font-size: 11px; font-weight: 500; color: #64748b;">2020 – 2021</span>
+          </div>
+          <p style="font-size: 11.5px; color: #475569; margin-top: 2px;">
+            Memimpin tim 15+ anggota dalam perencanaan liputan dan manajemen media publikasi sekolah, melatih kemampuan koordinasi tim, problem solving di lapangan, dan ketepatan tenggat waktu.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
